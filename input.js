@@ -40,13 +40,9 @@ const handleUserInput = function(key) {
   }
 };
 
-
-
-
-
 module.exports = {
  
-  setupInput, // stores the function as myFunction
+  setupInput,
  
 };
 
