@@ -19,14 +19,14 @@ const connect = function() {
     setInterval(() => {
       // console.log("Move: up");
       conn.write("Move: up");
-    }, 50);
+    }, 1000);
       
   });
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
+
+
 
 
 
