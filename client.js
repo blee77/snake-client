@@ -16,6 +16,8 @@ const connect = function() {
     console.log("Successfully connected to game server");
     conn.write("Name: BLE ");
 
+   
+
     setInterval(() => {
       // console.log("Move: up");
       conn.write("Move: up");

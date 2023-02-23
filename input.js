@@ -15,10 +15,14 @@ const setupInput = function(conn) {
 
 const handleUserInput = function(key) {
   // your code here
+  if (key === 'g') {
+    connection.write("Say: Hello");
+    console.log("Say: Hello");
+  }
   if (key === 'w') {
     connection.write("Move: up");
     console.log("Move: up");
-
+    
   } if (key === 'a') {
     connection.write("Move: left");
     console.log("Move: left");
