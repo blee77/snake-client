@@ -15,29 +15,46 @@ const setupInput = function(conn) {
 
 const handleUserInput = function(key) {
   // your code here
+  
+  // if (key === 'w') {
+  //   connection.write("Move: up");
+  //   console.log("Move: up");
+    
+  // } if (key === 'a') {
+  //   connection.write("Move: left");
+  //   console.log("Move: left");
+  // }
+  // if (key === 's') {
+  //   connection.write("Move: down");
+  //   console.log("Move: down");
+  // }
+  // if (key === 'd') {
+  //   connection.write("Move: right");
+  //   console.log("Move: right");
+  // }
+
+  // Map key strokes to the write command string
+  const mappings = {
+    w: "Move: up",
+    a: "Move: left",
+    s: "Move: down",
+    d: "Move: right",
+  };
   if (key === 'g') {
     connection.write("Say: Hello");
     console.log("Say: Hello");
   }
-  if (key === 'w') {
-    connection.write("Move: up");
-    console.log("Move: up");
-    
-  } if (key === 'a') {
-    connection.write("Move: left");
-    console.log("Move: left");
+  
+  // Short circuit if user does the Ctrl-C key
+  if (key === "\u0003") {
+    return process.exit();
   }
-  if (key === 's') {
-    connection.write("Move: down");
-    console.log("Move: down");
+  
+  // handles all other key strokes
+  if (mappings[key]) {
+    connection.write(mappings[key]);
   }
-  if (key === 'd') {
-    connection.write("Move: right");
-    console.log("Move: right");
-  }
-  if (key === '\u0003') {
-    process.exit();
-  }
+  
 };
 
 module.exports = {
